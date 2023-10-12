@@ -2,18 +2,18 @@ package flower.store;
 
 public class FlowerPack {
     private Flower flower;
-    private int quantity;
+    private int amount;
 
-    public FlowerPack(Flower flower, int quantity) {
+    public FlowerPack(Flower flower, int amount) {
         this.flower = flower;
-        setQuantity(quantity);
+        this.amount = amount;
     }
 
-    public void setQuantity(int quantity) {
-        this.quantity = quantity < 1 ? 1 : quantity;
+    public double getPrice() {
+        return flower.getPrice() * amount;
     }
 
-    public int returnPrice() {
-        return flower.getPrice() * this.quantity;
+    public Flower getFlower() {
+        return this.flower;
     }
 }
